@@ -7,6 +7,7 @@ import com.salvador.login.domain.User;
 import com.salvador.login.service.EmailService;
 import com.salvador.login.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,6 +16,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,11 +30,13 @@ import java.util.*;
 @Controller
 public class SignupController {
 
-    @Autowired
-    private UserService userService;
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private UserService userService;
 
     @Autowired
     private EmailService emailService;
@@ -121,7 +125,7 @@ public class SignupController {
         User user = userService.findByConfirmationToken(requestParams.get("token").toString());
 
         // Set new password
-        user.setPassword(bCryptPasswordEncoder.encode(requestParams.get("password").toString()));
+        user.setPassword(passwordEncoder().encode(requestParams.get("password").toString()));
 
         // Set user to enabled
         user.setEnabled(true);
