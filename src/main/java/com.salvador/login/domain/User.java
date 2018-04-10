@@ -1,6 +1,8 @@
 package com.salvador.login.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,23 +10,32 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name = "id")
     private Long id;
 
     @Column (unique = true, nullable = false)
-    private String username;
-
-    @Column (nullable = false)
+    @Email (message ="Please provide a valid email.")
+    @NotEmpty (message = "Please provide an email.")
     private String email;
 
     @Column (name = "first_name", nullable = false)
+    @NotEmpty (message = "Please provide your first name.")
     private String firstName;
 
     @Column (name = "last_name", nullable = false)
+    @NotEmpty (message = "Please provide your last name.")
     private String lastName;
 
-    @Column (name = "password", nullable = false)
+    @Column (name = "password")
     private String password;
+
+    @Column(name = "enabled")
+    private boolean enabled;
+
+    @Column (name = "confirmation_token")
+    private String confirmationToken;
 
     @ManyToMany ( cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable ( name = "users_roles",
@@ -39,14 +50,6 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getEmail() {
@@ -81,6 +84,22 @@ public class User {
         this.password = password;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getConfirmationToken() {
+        return confirmationToken;
+    }
+
+    public void setConfirmationToken(String confirmationToken) {
+        this.confirmationToken = confirmationToken;
+    }
+
     public Set<Role> getRoles() {
         return roles;
     }
@@ -93,7 +112,6 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
