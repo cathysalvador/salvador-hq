@@ -1,6 +1,6 @@
 package com.salvador.login.service;
 
-import com.salvador.login.domain.User;
+import com.salvador.login.persistence.model.User;
 
 public interface UserService {
 

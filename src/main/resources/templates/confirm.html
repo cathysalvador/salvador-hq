@@ -9,12 +9,12 @@
 
     <link rel="stylesheet" type="text/css" href="./css/main.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-    <title>Sign up</title>
+    <title th:text="#{label.signup.title}">Sign up</title>
 </head>
 <body>
     <div th:fragment="content">
 
-        <h2 class="form-signin-heading">Set your password</h2>
+        <h2 class="form-signin-heading" th:text="#{label.signup.confirm.title}">Set your password</h2>
         <div th:if="${successMessage}" class="alert alert-success"
              role="alert" th:text=${successMessage}>
         </div>
@@ -32,18 +32,18 @@
             <input type="hidden" name="token" th:value="${confirmationToken}"/>
 
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password" th:text="#{label.password}">Password</label>
                 <input type="password" id="password" name="password" class="form-control" required="true"/>
             </div>
             <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
+                <label for="confirmPassword" th:text="#{label.confirm.password}">Confirm Password</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required="true"
                        data-fv-notempty="true" data-fv-notempty-message="Please confirm password."
                        data-fv-identical="true" data-fv-identical-field="password" data-fv-identical-message="Both passwords must be the same"/>
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{label.save}">Save</button>
             </div>
         </form>
     </div>

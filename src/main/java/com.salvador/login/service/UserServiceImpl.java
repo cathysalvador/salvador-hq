@@ -1,23 +1,16 @@
 package com.salvador.login.service;
 
-import com.salvador.login.domain.Role;
-import com.salvador.login.domain.User;
-import com.salvador.login.repository.UserRepository;
+import com.salvador.login.persistence.model.User;
+import com.salvador.login.persistence.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+/*
 
+ */
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
 

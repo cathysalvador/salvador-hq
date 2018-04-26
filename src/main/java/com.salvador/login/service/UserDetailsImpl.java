@@ -1,7 +1,7 @@
 package com.salvador.login.service;
 
-import com.salvador.login.domain.Role;
-import com.salvador.login.domain.User;
+import com.salvador.login.persistence.model.Role;
+import com.salvador.login.persistence.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,4 +1,4 @@
-package com.salvador.login.domain;
+package com.salvador.login.persistence.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
