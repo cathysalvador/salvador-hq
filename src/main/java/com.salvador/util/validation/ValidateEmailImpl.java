@@ -1,4 +1,4 @@
-package com.salvador.login.validation;
+package com.salvador.util.validation;
 
 import org.apache.commons.validator.routines.EmailValidator;
 

@@ -1,6 +1,6 @@
-package com.salvador.login.persistence.repository;
+package com.salvador.user.persistence.repository;
 
-import com.salvador.login.persistence.model.User;
+import com.salvador.user.persistence.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository <User, Long> {

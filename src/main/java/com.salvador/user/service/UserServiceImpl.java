@@ -1,7 +1,7 @@
-package com.salvador.login.service;
+package com.salvador.user.service;
 
-import com.salvador.login.persistence.model.User;
-import com.salvador.login.persistence.repository.UserRepository;
+import com.salvador.user.persistence.model.User;
+import com.salvador.user.persistence.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

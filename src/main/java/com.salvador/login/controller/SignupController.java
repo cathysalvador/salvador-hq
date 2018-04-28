@@ -2,10 +2,10 @@ package com.salvador.login.controller;
 
 import com.salvador.login.dto.UserDto;
 import com.salvador.login.dto.UserPasswordDto;
-import com.salvador.login.persistence.model.Role;
-import com.salvador.login.persistence.model.User;
-import com.salvador.login.service.EmailService;
-import com.salvador.login.service.UserService;
+import com.salvador.user.persistence.model.Role;
+import com.salvador.user.persistence.model.User;
+import com.salvador.util.service.EmailService;
+import com.salvador.user.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

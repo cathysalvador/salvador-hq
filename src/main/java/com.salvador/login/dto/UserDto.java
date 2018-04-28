@@ -1,6 +1,6 @@
 package com.salvador.login.dto;
 
-import com.salvador.login.validation.ValidateEmail;
+import com.salvador.util.validation.ValidateEmail;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;

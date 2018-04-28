@@ -1,7 +1,7 @@
-package com.salvador.login.service;
+package com.salvador.user.service;
 
-import com.salvador.login.persistence.model.Role;
-import com.salvador.login.persistence.model.User;
+import com.salvador.user.persistence.model.Role;
+import com.salvador.user.persistence.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -60,5 +60,9 @@ public class UserDetailsImpl implements UserDetails{
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public String getFirstName() {
+        return user.getFirstName();
     }
 }

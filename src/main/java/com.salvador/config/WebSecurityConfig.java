@@ -44,7 +44,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                     .antMatchers("/signup").permitAll()
                     .antMatchers("/confirm").permitAll()
                     .antMatchers("/login").permitAll()
+                    .antMatchers("/index").permitAll()
+                    .antMatchers("/").permitAll()
                     .antMatchers("/css/**").permitAll()
+                    .antMatchers("/js/**").permitAll()
+                    .antMatchers("/img/**").permitAll()
+                    .antMatchers("/favicon.ico").permitAll()
+                    .antMatchers("/node_modules/**").permitAll()
                 .anyRequest().authenticated()
                     .and()
                 .formLogin()
@@ -54,6 +60,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                     .and()
                 .logout().logoutSuccessUrl("/login?logout").permitAll();
     }
-
 
 }

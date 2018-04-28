@@ -1,0 +1,29 @@
+{
+  "name": "salvador-hq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cathysalvador/salvador-hq.git"
+  },
+  "keywords": [
+    "java",
+    "spring",
+    "springboot"
+  ],
+  "author": "Catherine Salvador",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cathysalvador/salvador-hq/issues"
+  },
+  "homepage": "https://github.com/cathysalvador/salvador-hq#readme",
+  "dependencies": {
+    "bootstrap": "4.1.0",
+    "jquery": "3.2.1",
+    "popper.js": "1.14.0"
+  }
+}

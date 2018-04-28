@@ -1,4 +1,4 @@
-package com.salvador.login.service;
+package com.salvador.util.service;
 
 import org.springframework.mail.SimpleMailMessage;
 

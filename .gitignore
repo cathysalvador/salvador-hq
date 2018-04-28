@@ -45,3 +45,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### npm ###
+node_modules/
