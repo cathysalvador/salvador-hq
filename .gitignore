@@ -39,12 +39,12 @@ target/
 *.ipr
 
 ### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+#nbproject/private/
+#build/
+#nbbuild/
+#dist/
+#nbdist/
+#.nb-gradle/
 
 ### npm ###
-# node_modules/
+### node_modules/
