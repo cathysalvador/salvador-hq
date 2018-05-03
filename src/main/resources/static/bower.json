@@ -1,0 +1,20 @@
+{
+  "name": "salvador-hq",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Catherine Salvador"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "java",
+    "spring",
+    "springboot"
+  ],
+  "homepage": "https://github.com/cathysalvador/salvador-hq",
+  "dependencies": {
+    "angular": "1.6.10",
+    "angular-route": "1.6.10"
+  }
+
+}

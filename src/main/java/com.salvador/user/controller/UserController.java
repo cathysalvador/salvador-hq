@@ -6,13 +6,13 @@ import com.salvador.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
 
-@Controller
+@RestController
 public class UserController {
 
     @Autowired
@@ -23,8 +23,8 @@ public class UserController {
 
 
 
-    @GetMapping("/user")
-    public ModelAndView user(ModelAndView modelAndView, Principal principal){
+    @GetMapping("/users")
+    public ModelAndView list(ModelAndView modelAndView, Principal principal){
         Authentication authentication = (Authentication) principal;
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         User user = userService.findByEmail(userDetails.getUsername());
