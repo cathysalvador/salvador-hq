@@ -1,4 +1,4 @@
-package com.salvador.login.dto;
+package com.salvador.user.dto;
 
 import com.salvador.util.validation.ValidateEmail;
 
@@ -19,15 +19,6 @@ public class UserDto {
     @NotNull
     @NotEmpty (message = "Please provide your last name.")
     private String lastName;
-
-//    @NotNull
-//    @NotEmpty
-//    private String password;
-//
-//    @NotNull
-//    @NotEmpty
-//    private String confirmPassword;
-
 
     public String getEmail() {
         return email;

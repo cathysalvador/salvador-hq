@@ -8,6 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /*
 
  */
@@ -32,6 +34,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return userRepository.findByConfirmationToken(confirmationToken);
     }
 
+    @Override
+    public List<User> findAllByOrderByEmailAsc() {
+        return userRepository.findAllByOrderByEmailAsc();
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

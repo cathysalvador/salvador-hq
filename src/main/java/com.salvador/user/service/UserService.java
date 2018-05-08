@@ -2,12 +2,16 @@ package com.salvador.user.service;
 
 import com.salvador.user.persistence.model.User;
 
+import java.util.List;
+
 public interface UserService {
 
-    public User findByEmail (String email);
+    User findByEmail (String email);
 
-    public User findByConfirmationToken(String confirmationToken);
+    User findByConfirmationToken(String confirmationToken);
 
-    public User save(User user);
+    List <User> findAllByOrderByEmailAsc();
+
+    User save(User user);
 
 }

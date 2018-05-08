@@ -1,6 +1,6 @@
 package com.salvador.login.controller;
 
-import com.salvador.login.dto.UserDto;
+import com.salvador.user.dto.UserDto;
 import com.salvador.login.dto.UserPasswordDto;
 import com.salvador.user.persistence.model.Role;
 import com.salvador.user.persistence.model.User;
