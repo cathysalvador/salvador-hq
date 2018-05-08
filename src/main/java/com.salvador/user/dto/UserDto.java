@@ -2,10 +2,14 @@ package com.salvador.user.dto;
 
 import com.salvador.util.validation.ValidateEmail;
 
+import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 public class UserDto {
+
+    @Id
+    private Long id;
 
     @ValidateEmail (message = "Invalid email.")
     @NotNull
@@ -19,6 +23,14 @@ public class UserDto {
     @NotNull
     @NotEmpty (message = "Please provide your last name.")
     private String lastName;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;
