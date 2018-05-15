@@ -1,0 +1,31 @@
+<section ng-controller=UserController ng-init="findOne()">
+    <h1>Edit User</h1>
+    <div>
+        <small>
+            <em>Email</em>
+            <em ng-bind="user.email"></em>
+        </small>
+    </div>
+    <form ng-submit="update()" novalidate>
+        <div>
+            <label for="firstName">First Name</label>
+            <div>
+                <input type="text" ng-model="user.firstName"
+                       id="firstName" placeholder="First Name" required>
+            </div>
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <div>
+                <input type="text" ng-model="user.lastName"
+                       id="lastName" placeholder="Last Name" required>
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="Update">
+        </div>
+        <div ng-show="error">
+            <strong ng-bind="error"></strong>
+        </div>
+    </form>
+</section>

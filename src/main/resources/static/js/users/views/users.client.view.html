@@ -1,4 +1,15 @@
-<section ng-controller=UserController>
-    <input type=text id=text1 ng-model=name>
-    <input type=text id=text2 ng-model=name>
+<section ng-controller=UserController ng-init="findOne()">
+    <h1>User</h1>
+    <div>
+        <a href="/users#!/users/{{user.id}}/edit">edit</a>
+        <a href="#" ng-click="delete();">delete</a>
+        <small>
+            <em>Email</em>
+            <em ng-bind="user.email"></em>
+            <em>First Name</em>
+            <em ng-bind="user.firstName"></em>
+            <em>Last Name</em>
+            <em ng-bind="user.lastName"></em>
+        </small>
+    </div>
 </section>

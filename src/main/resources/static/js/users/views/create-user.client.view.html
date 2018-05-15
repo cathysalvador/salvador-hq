@@ -1,0 +1,32 @@
+<section ng-controller=UserController>
+    <h1>New User</h1>
+    <form ng-submit="create()" novalidate>
+        <div>
+            <label for="email">Email Address</label>
+            <div>
+                <input type="text" ng-model="email"
+                       id="email" placeholder="Email Address" required>
+            </div>
+        </div>
+        <div>
+            <label for="firstName">First Name</label>
+            <div>
+                <input type="text" ng-model="firstName"
+                       id="firstName" placeholder="First Name" required>
+            </div>
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <div>
+                <input type="text" ng-model="lastName"
+                       id="lastName" placeholder="Last Name" required>
+            </div>
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+        <div ng-show="error">
+            <strong ng-bind="error"></strong>
+        </div>
+    </form>
+</section>

@@ -1,14 +1,18 @@
-<section data-ng-controller="UserController" ng-init="find()">
+<section ng-controller="UserController" ng-init="find()">
     <h1>Users</h1>
+    <div>
+        <a href="/users#!/users/create">New User</a>
+    </div>
+    <br/>
     <ul>
-        <li data-ng-repeat="user in users">
-            <a data-ng-href="#!/users/{{user.id}}" data-ng-bind="user.id"></a>
+        <li ng-repeat="user in users">
+            <a ng-href="#!/users/{{user.id}}" ng-bind="user.id"></a>
             <br>
-            <small data-ng-bind="user.email"></small>
+            <small ng-bind="user.email"></small>
             <br>
-            <small data-ng-bind="user.firstName"></small>
+            <small ng-bind="user.lastName"></small>
             <small>,</small>
-            <small data-ng-bind="user.lastName"></small>
+            <small ng-bind="user.firstName"></small>
         </li>
     </ul>
 </section>

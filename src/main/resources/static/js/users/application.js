@@ -1,6 +1,8 @@
 var mainApplicationModuleName = 'salvador';
 
-var mainApplicationModule = angular.module(mainApplicationModuleName, ['ngResource', 'ngRoute', 'users']);
+var mainApplicationModule = angular.module(mainApplicationModuleName, [
+
+'ngResource', 'ngRoute', 'users']);
 
 mainApplicationModule.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('!')}]);
