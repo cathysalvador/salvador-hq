@@ -17,6 +17,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -44,6 +45,9 @@ public class SignupController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
 
     @Autowired
     private EmailService emailService;
@@ -146,20 +150,6 @@ public class SignupController {
                                            HttpServletRequest request) {
 
 
-         // @RequestParam Map requestParams, Model model, HttpServletRequest request) {
-
-        //Zxcvbn passwordCheck = new Zxcvbn();
-
-        //Strength strength = passwordCheck.measure(requestParams.get("password").toString());
-
-//        if (strength.getScore() < 3) {
-//            bindingResult.reject("password");
-
-//            redirectAttributes.addFlashAttribute("errorMessage", "Your password is too weak.  Choose a stronger one.");
-//            System.out.println(requestParams.get("token"));
-//            return "redirect:confirm?token=\" + requestParams.get(\"token\")";
-//        }
-
         String strToken = requestParams.get("token").toString();
         if (strToken.isEmpty()) {
             strToken = model.asMap().get("token").toString();
@@ -200,7 +190,8 @@ public class SignupController {
         for (Role role : roles) {
             authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
         }
-        Authentication authentication = new UsernamePasswordAuthenticationToken(savedUser, null, authorities);
+
+        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetailsService.loadUserByUsername(savedUser.getEmail()), null, authorities);
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
