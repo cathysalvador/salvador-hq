@@ -1,5 +1,5 @@
 angular.module('users').factory('Authentication', [
-    function() {
+    function () {
         this.user = window.user;
         return {
             user: this.user

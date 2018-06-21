@@ -1,7 +1,7 @@
 {
-  "name": "angular-resource",
+  "name": "angular-route",
   "version": "1.6.10",
-  "description": "AngularJS module for interacting with RESTful server-side data sources",
+  "description": "AngularJS router module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
     "angular",
     "framework",
     "browser",
-    "rest",
+    "router",
     "client-side"
   ],
   "author": "Angular Core Team <angular-core+npm@google.com>",
@@ -25,8 +25,10 @@
   "homepage": "http://angularjs.org",
   "jspm": {
     "shim": {
-      "angular-resource": {
-        "deps": ["angular"]
+      "angular-route": {
+        "deps": [
+          "angular"
+        ]
       }
     }
   }

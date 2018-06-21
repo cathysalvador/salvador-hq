@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
       lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,55 +9,65 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" type="text/css" href="./css/main.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <title th:text="#{label.signup.title}">form</title>
 </head>
 <body>
-    <div th:fragment="content">
+<div th:fragment="content">
 
-        <div th:if="${successMessage}" class="alert alert-success"
-             role="alert" th:text=${successMessage}>
-        </div>
-
-        <div th:if="${errorMessage}" class="alert alert-danger"
-             role="alert" th:text=${errorMessage}>
-        </div>
-
-        <div th:if="${message}" class="alert alert-danger"
-             role="alert" th:text=${message}>
-        </div>
-
-        <form name="f" th:object="${user}" th:action="@{/signup}" method="post" class="form-signin">
-            <h2 class="form-signin-heading" th:text="#{label.signup.form.title}" >Create an account</h2>
-            <div class="form-group">
-                <label for="email" th:text="#{label.email.address}">Email address</label>
-                <input type="text" id="email" name="email" class="form-control" th:field="*{email}" required="true" autofocus="autofocus"/>
-            </div>
-            <div class="form-group">
-                <label for="firstName" th:text="#{label.first.name}">First Name</label>
-                <input type="text" id="firstName" name="firstName" class="form-control" th:field="*{firstName}" required="true"/>
-            </div>
-            <div class="form-group">
-                <label for="lastName" th:text="#{label.last.name}">Last Name</label>
-                <input type="text" id="lastName" name="lastName" class="form-control" th:field="*{lastName}" required="true"/>
-            </div>
-            <!-- <div class="form-group">-->
-                <!--<label for="password">Password</label>-->
-                <!--<input type="password" id="password" name="password" class="form-control" th:field="*{password}" required="true"/>-->
-            <!--</div>-->
-            <!--<div class="form-group">-->
-                <!--<label for="confirmPassword">Confirm Password</label>-->
-                <!--<input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required="true"/>-->
-            <!--</div>-->
-            <div class="form-group">
-                <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{label.submit}">Submit</button>
-            </div>
-        </form>
-        <br/>
-        <!-- <p class="text-center"><a th:href="@{/login}" th:text="#{label.signin}">login</a></p> -->
+    <div th:if="${successMessage}" class="alert alert-success"
+         role="alert" th:text=${successMessage}>
     </div>
+
+    <div th:if="${errorMessage}" class="alert alert-danger"
+         role="alert" th:text=${errorMessage}>
+    </div>
+
+    <div th:if="${message}" class="alert alert-danger"
+         role="alert" th:text=${message}>
+    </div>
+
+    <form name="f" th:object="${user}" th:action="@{/signup}" method="post" class="form-signin">
+        <h2 class="form-signin-heading" th:text="#{label.signup.form.title}">Create an account</h2>
+        <div class="form-group">
+            <label for="email" th:text="#{label.email.address}">Email address</label>
+            <input type="text" id="email" name="email" class="form-control" th:field="*{email}" required="true"
+                   autofocus="autofocus"/>
+        </div>
+        <div class="form-group">
+            <label for="firstName" th:text="#{label.first.name}">First Name</label>
+            <input type="text" id="firstName" name="firstName" class="form-control" th:field="*{firstName}"
+                   required="true"/>
+        </div>
+        <div class="form-group">
+            <label for="lastName" th:text="#{label.last.name}">Last Name</label>
+            <input type="text" id="lastName" name="lastName" class="form-control" th:field="*{lastName}"
+                   required="true"/>
+        </div>
+        <!-- <div class="form-group">-->
+        <!--<label for="password">Password</label>-->
+        <!--<input type="password" id="password" name="password" class="form-control" th:field="*{password}" required="true"/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+        <!--<label for="confirmPassword">Confirm Password</label>-->
+        <!--<input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required="true"/>-->
+        <!--</div>-->
+        <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{label.submit}">Submit</button>
+        </div>
+    </form>
+    <br/>
+    <!-- <p class="text-center"><a th:href="@{/login}" th:text="#{label.signin}">login</a></p> -->
+</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </html>
